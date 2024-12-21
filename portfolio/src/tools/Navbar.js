@@ -13,7 +13,7 @@ const Navbar = () => {
           href="#home"
           className="text-xl font-bold text-gray-200 hover:text-gray-400 transition-all"
         >
-          My Portfolio
+          Peter Tran
         </a>
 
         {/* Navigation Links */}
