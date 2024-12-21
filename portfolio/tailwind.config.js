@@ -14,8 +14,18 @@ module.exports = {
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
       },
+
+      animation: {
+        'fade-in-out': 'fadeInOut 3s infinite',
+      },
+      keyframes: {
+        fadeInOut: {
+          '0%, 100%': {opacity: 0},
+          '50%': {opacity: 1},
+        },
+      },
     },
   },
   plugins: [],
-}
+};
 
