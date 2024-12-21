@@ -47,7 +47,7 @@ const App = () => {
         <img
           src={`${process.env.PUBLIC_URL}/logogif.gif`}
           alt="Logo"
-          className="h-40 w-auto mb-6" 
+          className="h-75 w-75 mb-6" 
         />
 
         {/* Introductory Text */}

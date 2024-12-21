@@ -4,21 +4,25 @@ const ProfHist = () => {
       title: "Server/Bartender",
       company: "Roy's Korean Kitchen",
       date: "September 2024 - Present",
+      description: "Boosted sales by 10% through reporting, promotion analysis, and efficient guest planning",
     },
     {
       title: "Server",
       company: "Baekjeong Korean BBQ House",
       date: "June 2022 - February 2024",
+      description: "Ensured quality compliance and managed high-volume service; boosting efficiency and maintaining a 4.5-star rating",
     },
     {
       title: "Keyholder",
       company: "Truedan (Jenjudan)",
       date: "June 2021 - June 2022",
+      description: "Streamlined operations and ensured accurate cash handling, reducing shortages and expenses.",
     },
     {
       title: "Customer Service Specialist",
       company: "Mcdonalds",
       date: "June 2018 - June 2022",
+      description: "Boosted customer satisfaction, engagement, and repeat visits through effective communication and training.",
     },
   ];
 
@@ -51,7 +55,8 @@ const ProfHist = () => {
                   {item.title}
                 </h3>
                 <p className="text-sm text-gray-600">{item.company}</p>
-                <p className="text-sm text-gray-500 italic">{item.date}</p>
+                <p className="text-sm text-gray-500 italic mb-2">{item.date}</p>
+                <p className="text-sm text-gray-600">{item.description}</p>
               </div>
             </div>
           ))}
