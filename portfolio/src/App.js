@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useInView } from 'react-intersection-observer';
 import Navbar from './tools/Navbar';
 import AboutMe from './components/AboutMe';
@@ -14,24 +14,24 @@ const sections = [
 ];
 
 const App = () => {
-  const [visibleSections, setVisibleSections] = useState([sections[0]]);
+  const [visibleSections, setVisibleSections] = useState([sections[0].id]);
   const { ref, inView } = useInView({ threshold: 0.5 });
   const [showArrow, setShowArrow] = useState(true);
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     if (!inView) {
       setShowArrow(false);
     }
-  };
+  }, [inView]);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [inView]);
+  }, [handleScroll]);
 
   React.useEffect(() => {
     if (inView && visibleSections.length < sections.length) {
-      setVisibleSections((prev) => [...prev, sections[prev.length]]);
+      setVisibleSections((prev) => [...prev, sections[prev.length].id]);
     }
   }, [inView, visibleSections]);
 
@@ -65,9 +65,13 @@ const App = () => {
         )}
       </div>
 
-      {/* Dynamically loaded sections */}
-      {visibleSections.map((section) => (
-        <div key={section.id} id={section.id} className="fade-in">
+      {/* Render all sections */}
+      {sections.map((section) => (
+        <div
+          key={section.id}
+          id={section.id}
+          className={`fade-in ${!visibleSections.includes(section.id) ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100 h-auto'}`}
+        >
           {section.component}
         </div>
       ))}
