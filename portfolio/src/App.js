@@ -18,7 +18,6 @@ const App = () => {
   const { ref, inView } = useInView({ threshold: 0.5 });
   const [showArrow, setShowArrow] = useState(true);
 
-  // Hide arrow after user scrolls away from the home section
   const handleScroll = () => {
     if (!inView) {
       setShowArrow(false);
