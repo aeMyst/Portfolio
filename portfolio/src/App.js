@@ -29,28 +29,26 @@ const App = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [handleScroll]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (inView && visibleSections.length < sections.length) {
       setVisibleSections((prev) => [...prev, sections[prev.length].id]);
     }
   }, [inView, visibleSections]);
 
   return (
-    <div className="App">
+    <div className="bg-gray-100 min-h-screen flex flex-col">
       <Navbar />
-      {/* Home section */}
+
+      {/* Home Section */}
       <div
         id="home"
-        className="min-h-screen bg-gray-100 flex flex-col items-center justify-center relative"
+        className="min-h-screen flex flex-col items-center justify-center relative"
       >
-        {/* Logo GIF */}
         <img
           src={`${process.env.PUBLIC_URL}/logogif.gif`}
           alt="Logo"
-          className="h-75 w-75 mb-6" 
+          className="h-50 w-50 mb-6"
         />
-
-        {/* Introductory Text */}
         <h1 className="text-4xl font-bold fade-in">Hello, I'm Peter Tran!</h1>
         <p className="text-lg text-gray-600 fade-in mt-4">
           A passionate 3rd Year Computer Science Student Studying at the University of Calgary
@@ -73,18 +71,20 @@ const App = () => {
         )}
       </div>
 
-      {/* Render all sections */}
-      {sections.map((section) => (
-        <div
-          key={section.id}
-          id={section.id}
-          className={`fade-in ${!visibleSections.includes(section.id) ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100 h-auto'}`}
-        >
-          {section.component}
-        </div>
-      ))}
+      {/* Render Sections */}
+      <div className="space-y-20">
+        {sections.map((section) => (
+          <div
+            key={section.id}
+            id={section.id}
+            className="fade-in"
+          >
+            {section.component}
+          </div>
+        ))}
+      </div>
 
-      {/* Infinite scroll trigger */}
+      {/* Infinite Scroll Trigger */}
       <div ref={ref} className="h-10 bg-transparent" />
     </div>
   );
