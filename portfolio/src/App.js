@@ -43,6 +43,14 @@ const App = () => {
         id="home"
         className="min-h-screen bg-gray-100 flex flex-col items-center justify-center relative"
       >
+        {/* Logo GIF */}
+        <img
+          src={`${process.env.PUBLIC_URL}/logogif.gif`}
+          alt="Logo"
+          className="h-40 w-auto mb-6" 
+        />
+
+        {/* Introductory Text */}
         <h1 className="text-4xl font-bold fade-in">Hello, I'm Peter Tran!</h1>
         <p className="text-lg text-gray-600 fade-in mt-4">
           A passionate 3rd Year Computer Science Student Studying at the University of Calgary
