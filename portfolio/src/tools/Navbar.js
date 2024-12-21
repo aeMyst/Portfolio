@@ -30,7 +30,7 @@ const Navbar = () => {
           </li>
           <li>
             <a href="#professional-history" className="text-sm font-medium text-gray-200 hover:text-gray-400">
-              History
+              Professional History
             </a>
           </li>
           <li>

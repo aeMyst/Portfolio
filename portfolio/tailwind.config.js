@@ -7,6 +7,7 @@ module.exports = {
     './src/components/Projects.js',
     './src/components/Socials.js',
     './src/tools/Navbar.js',
+    './src/app.js'
   ],
   theme: {
     extend: {

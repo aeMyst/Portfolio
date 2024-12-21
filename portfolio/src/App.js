@@ -27,9 +27,12 @@ const App = () => {
     <div className="App">
       <Navbar />
       {/* Home section */}
-      <div id="home" className="min-h-screen bg-gray-100 flex items-center justify-center">
-        <h1 className="text-4xl font-bold">Welcome to My Portfolio</h1>
-      </div>
+      <div id="home" className="min-h-screen bg-gray-100 flex flex-col items-center justify-center space-y-6">
+  <h1 className="text-4xl font-bold">Hello, I'm Peter Tran!</h1>
+  <p className="text-lg text-gray-600">
+    A passionate 3rd Year Computer Science Student Studying at the University of Calgary
+  </p>
+</div>
       {/* Dynamically loaded sections */}
       {visibleSections.map((section) => (
         <div key={section.id} id={section.id} className="fade-in">
