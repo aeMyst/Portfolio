@@ -38,6 +38,17 @@ const Navbar = () => {
               Contact
             </a>
           </li>
+          <li>
+            {/* Resume Link */}
+            <a
+              href="/resume.pdf" // Replace with the actual path to your resume
+              target="_blank" // Opens the resume in a new tab
+              rel="noopener noreferrer" // Security best practice for external links
+              className="text-sm font-medium text-gray-200 hover:text-gray-400"
+            >
+              Resume
+            </a>
+          </li>
         </ul>
       </div>
     </nav>
